@@ -9,6 +9,10 @@ const app = express().use(cors)
 app.use(cors())
 const server = http.createServer(app)
 
+
+app.get('/',(req, res, next)=>{
+    res.send("Hello")
+})
 const io = new Server(server)
 
 io.on("connection", async (socket)=>{
